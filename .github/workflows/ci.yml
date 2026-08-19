@@ -24,7 +24,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Cache Playwright browsers
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+
       - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
 
       - name: Run web adapter tests
@@ -32,6 +40,10 @@ jobs:
 
       - name: Run API adapter tests
         run: node src/adapters/http-api-adapter.js
+
+      # Mobile tests are intentionally excluded here — they require a
+      # physical device or emulator, which a standard CI runner doesn't
+      # have. Mobile testing on real infrastructure is Phase 7's job.
 
       - name: Upload evidence (screenshots) as a build artifact
         if: always()
