@@ -100,7 +100,7 @@ async function loginFlowTest() {
     await executor.type({ by: "id", value: "username" }, "student");
     await executor.type({ by: "id", value: "password" }, "Password123");
     await executor.click({ by: "id", value: "submit" });
-    await executor.waitFor({ by: "text", value: "Congratulations" });
+    await executor.waitFor({ by: "text", value: "ThisTextWillNeverAppear" });
     await executor.captureEvidence("login-success");
   } catch (err) {
     await executor.captureEvidence("login-failure");
