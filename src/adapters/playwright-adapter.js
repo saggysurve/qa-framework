@@ -7,7 +7,7 @@
  *
  * Locator shape used throughout: { by: "role" | "text" | "testId" | "accessibilityId", value: string }
  */
-
+// sk-ant-api03-1234567890abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890abcdefghijklmn-AAAAAAAA
 import { chromium } from "playwright";
 import { assertImplementsUiExecutor } from "../core/UiExecutor.js";
 
