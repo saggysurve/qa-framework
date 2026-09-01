@@ -10,6 +10,8 @@
 
 import { chromium } from "playwright";
 import { assertImplementsUiExecutor } from "../core/UiExecutor.js";
+import { TestReporter } from "../core/TestReporter.js";
+import { OpenRouterProvider } from "../core/OpenRouterProvider.js";
 
 export class PlaywrightAdapter {
   browser = null;
@@ -87,6 +89,8 @@ export class PlaywrightAdapter {
 // Example: a runnable login test using the adapter
 // ---------------------------------------------------------------
 async function loginFlowTest() {
+  const reporter = new TestReporter({ aiProvider: new OpenRouterProvider() });
+  const startedAt = Date.now();
   const executor = new PlaywrightAdapter();
   assertImplementsUiExecutor(executor);
   await executor.setup({
@@ -102,8 +106,17 @@ async function loginFlowTest() {
     await executor.click({ by: "id", value: "submit" });
     await executor.waitFor({ by: "text", value: "Congratulations" });
     await executor.captureEvidence("login-success");
+
+    await reporter.record({
+      name: "loginFlowTest", suite: "web-login",
+      status: "pass", durationMs: Date.now() - startedAt,
+    });
   } catch (err) {
     await executor.captureEvidence("login-failure");
+    await reporter.record({
+      name: "loginFlowTest", suite: "web-login",
+      status: "fail", durationMs: Date.now() - startedAt, error: err.message,
+    });
     throw err;
   } finally {
     await executor.teardown();
@@ -111,6 +124,8 @@ async function loginFlowTest() {
 }
 
 async function invalidPasswordTest() {
+  const reporter = new TestReporter({ aiProvider: new OpenRouterProvider() });
+  const startedAt = Date.now();
   const executor = new PlaywrightAdapter();
   assertImplementsUiExecutor(executor);
   await executor.setup({
@@ -128,15 +143,23 @@ async function invalidPasswordTest() {
 
     const errorText = await executor.getText({ by: "id", value: "error" });
     const expected = "Your password is invalid!";
-
     if (!errorText.includes(expected)) {
       throw new Error(`Expected error "${expected}" but got "${errorText}"`);
     }
 
     console.log("PASS: invalidPasswordTest — got expected error message");
     await executor.captureEvidence("invalid-password-error");
+
+    await reporter.record({
+      name: "invalidPasswordTest", suite: "web-login",
+      status: "pass", durationMs: Date.now() - startedAt,
+    });
   } catch (err) {
     await executor.captureEvidence("invalid-password-failure");
+    await reporter.record({
+      name: "invalidPasswordTest", suite: "web-login",
+      status: "fail", durationMs: Date.now() - startedAt, error: err.message,
+    });
     throw err;
   } finally {
     await executor.teardown();
@@ -149,6 +172,14 @@ async function runAll() {
   console.log("loginFlowTest done");
   await invalidPasswordTest();
   console.log("invalidPasswordTest done");
-}
 
+  const reporter = new TestReporter();
+  reporter.logAudit({
+    runBy: "saggysurve",
+    environment: "staging",
+    testsRun: ["loginFlowTest", "invalidPasswordTest"],
+    trigger: "manual",
+  });
+  console.log("Audit log entry written");
+}
 runAll();

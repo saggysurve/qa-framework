@@ -1,0 +1,124 @@
+[
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 8934,
+    "timestamp": "2026-09-01T19:44:46.903Z",
+    "triage": null
+  },
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 3827,
+    "timestamp": "2026-09-01T19:48:36.928Z",
+    "triage": null
+  },
+  {
+    "name": "invalidPasswordTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 1617,
+    "timestamp": "2026-09-01T19:48:38.610Z",
+    "triage": null
+  },
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 3538,
+    "timestamp": "2026-09-01T19:50:55.769Z",
+    "triage": null
+  },
+  {
+    "name": "invalidPasswordTest",
+    "suite": "web-login",
+    "status": "fail",
+    "durationMs": 2258,
+    "error": "Expected error \"WrongExpectedTextOnPurpose\" but got \"Your password is invalid!\"",
+    "timestamp": "2026-09-01T19:50:58.089Z",
+    "triage": null
+  },
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 6579,
+    "timestamp": "2026-09-01T20:10:48.600Z",
+    "triage": null
+  },
+  {
+    "name": "invalidPasswordTest",
+    "suite": "web-login",
+    "status": "fail",
+    "durationMs": 2273,
+    "error": "Expected error \"WrongExpectedTextOnPurpose\" but got \"Your password is invalid!\"",
+    "timestamp": "2026-09-01T20:10:50.931Z",
+    "triage": "Likely real assertion failure — needs investigation"
+  },
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 3535,
+    "timestamp": "2026-09-01T20:13:44.396Z",
+    "triage": null
+  },
+  {
+    "name": "invalidPasswordTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 2073,
+    "timestamp": "2026-09-01T20:13:46.539Z",
+    "triage": null
+  },
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 3977,
+    "timestamp": "2026-09-01T20:15:15.243Z",
+    "triage": null
+  },
+  {
+    "name": "invalidPasswordTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 2038,
+    "timestamp": "2026-09-01T20:15:17.346Z",
+    "triage": null
+  },
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 3515,
+    "timestamp": "2026-09-01T20:17:11.000Z",
+    "triage": null
+  },
+  {
+    "name": "invalidPasswordTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 2242,
+    "timestamp": "2026-09-01T20:17:13.305Z",
+    "triage": null
+  },
+  {
+    "name": "loginFlowTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 5708,
+    "timestamp": "2026-09-01T20:23:58.711Z",
+    "triage": null
+  },
+  {
+    "name": "invalidPasswordTest",
+    "suite": "web-login",
+    "status": "pass",
+    "durationMs": 2125,
+    "timestamp": "2026-09-01T20:24:00.898Z",
+    "triage": null
+  }
+]

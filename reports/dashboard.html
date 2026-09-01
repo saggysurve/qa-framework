@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>qa-framework — Test Dashboard</title>
+<style>
+  body { font-family: -apple-system, Segoe UI, Roboto, sans-serif; background: #0f1117; color: #e6e6e6; margin: 0; padding: 32px; }
+  h1 { font-size: 22px; margin-bottom: 4px; }
+  .subtitle { color: #9aa0a6; margin-bottom: 24px; font-size: 14px; }
+  .stats { display: flex; gap: 16px; margin-bottom: 32px; }
+  .stat-card { background: #1a1d27; border-radius: 10px; padding: 16px 24px; min-width: 120px; }
+  .stat-card .num { font-size: 28px; font-weight: 700; }
+  .stat-card .label { font-size: 12px; color: #9aa0a6; text-transform: uppercase; letter-spacing: 0.04em; }
+  .pass-num { color: #4ade80; }
+  .fail-num { color: #f87171; }
+  table { width: 100%; border-collapse: collapse; background: #1a1d27; border-radius: 10px; overflow: hidden; }
+  th, td { text-align: left; padding: 10px 14px; font-size: 13px; border-bottom: 1px solid #262a36; }
+  th { color: #9aa0a6; text-transform: uppercase; font-size: 11px; letter-spacing: 0.04em; }
+  tr.fail { background: rgba(248, 113, 113, 0.06); }
+  .badge { padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 700; }
+  .badge.pass { background: rgba(74, 222, 128, 0.15); color: #4ade80; }
+  .badge.fail { background: rgba(248, 113, 113, 0.15); color: #f87171; }
+</style>
+</head>
+<body>
+  <h1>qa-framework test dashboard</h1>
+  <div class="subtitle">Generated 2/9/2026, 1:54:19 am · 15 recorded results</div>
+
+  <div class="stats">
+    <div class="stat-card"><div class="num">15</div><div class="label">Total runs</div></div>
+    <div class="stat-card"><div class="num pass-num">13</div><div class="label">Passed</div></div>
+    <div class="stat-card"><div class="num fail-num">2</div><div class="label">Failed</div></div>
+    <div class="stat-card"><div class="num">87%</div><div class="label">Pass rate</div></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>Test</th><th>Suite</th><th>Status</th><th>Duration</th><th>Timestamp</th><th>AI triage</th></tr>
+    </thead>
+    <tbody>
+      
+    <tr class="pass">
+      <td>invalidPasswordTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>2125ms</td>
+      <td>2/9/2026, 1:54:00 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>5708ms</td>
+      <td>2/9/2026, 1:53:58 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>invalidPasswordTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>2242ms</td>
+      <td>2/9/2026, 1:47:13 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>3515ms</td>
+      <td>2/9/2026, 1:47:11 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>invalidPasswordTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>2038ms</td>
+      <td>2/9/2026, 1:45:17 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>3977ms</td>
+      <td>2/9/2026, 1:45:15 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>invalidPasswordTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>2073ms</td>
+      <td>2/9/2026, 1:43:46 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>3535ms</td>
+      <td>2/9/2026, 1:43:44 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="fail">
+      <td>invalidPasswordTest</td>
+      <td>web-login</td>
+      <td><span class="badge fail">FAIL</span></td>
+      <td>2273ms</td>
+      <td>2/9/2026, 1:40:50 am</td>
+      <td>Likely real assertion failure — needs investigation</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>6579ms</td>
+      <td>2/9/2026, 1:40:48 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="fail">
+      <td>invalidPasswordTest</td>
+      <td>web-login</td>
+      <td><span class="badge fail">FAIL</span></td>
+      <td>2258ms</td>
+      <td>2/9/2026, 1:20:58 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>3538ms</td>
+      <td>2/9/2026, 1:20:55 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>invalidPasswordTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>1617ms</td>
+      <td>2/9/2026, 1:18:38 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>3827ms</td>
+      <td>2/9/2026, 1:18:36 am</td>
+      <td>-</td>
+    </tr>
+
+    <tr class="pass">
+      <td>loginFlowTest</td>
+      <td>web-login</td>
+      <td><span class="badge pass">PASS</span></td>
+      <td>8934ms</td>
+      <td>2/9/2026, 1:14:46 am</td>
+      <td>-</td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html>
