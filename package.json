@@ -4,8 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "test": "npm run test:web && npm run test:api",
+  "test:web": "node src/adapters/playwright-adapter.js",
+  "test:api": "node src/adapters/http-api-adapter.js",
+  "test:mobile": "node src/adapters/appium-adapter.js",
+  "test:self-heal": "node src/adapters/self-heal-test.js",
+  "report": "node src/core/generate-dashboard.js",
+  "docker:build": "docker build -t qa-framework .",
+  "docker:run": "docker run --rm qa-framework"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
