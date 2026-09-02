@@ -29,6 +29,8 @@ jobs:
 
       - name: Run web adapter tests
         run: node src/adapters/playwright-adapter.js
+        env:
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
 
       - name: Run API adapter tests
         run: node src/adapters/http-api-adapter.js
